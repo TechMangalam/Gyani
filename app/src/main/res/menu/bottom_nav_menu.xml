@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_course"
+        android:icon="@drawable/ic_home_black_24dp"
+        android:title="Courses" />
+
+    <item
+        android:id="@+id/navigation_upchar"
+        android:icon="@drawable/ic_dashboard_black_24dp"
+        android:title="MyCourses" />
+
+    <item
+        android:id="@+id/navigation_ask_doctor"
+        android:icon="@drawable/ic_baseline_contact_support_24"
+        android:title="Community" />
+
+    <item
+        android:id="@+id/navigation_yoga"
+        android:icon="@drawable/ic_baseline_yoga_24"
+        android:title="Posts" />
+
+    <item
+        android:id="@+id/navigation_nuske"
+        android:icon="@drawable/ic_baseline_nuske"
+        android:title="Blogs" />
+
+</menu>
