@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "72389140719",
+    "firebase_url": "https://gyani-45ce3-default-rtdb.firebaseio.com",
+    "project_id": "gyani-45ce3",
+    "storage_bucket": "gyani-45ce3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:72389140719:android:78e3884ea3903aa1b23b1a",
+        "android_client_info": {
+          "package_name": "com.bitaam.gyani"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "72389140719-9pek426gof7n1q25feg6e2igp30eli6v.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.bitaam.gyani",
+            "certificate_hash": "9356fd30774bb599f45f16a5805443f36a9a002d"
+          }
+        },
+        {
+          "client_id": "72389140719-fgrtkl142d71obtn8753n9gs7r45deff.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDaRlLYtLoABmPkXOhWCjfPwpwpmw2k3uU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "72389140719-fgrtkl142d71obtn8753n9gs7r45deff.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

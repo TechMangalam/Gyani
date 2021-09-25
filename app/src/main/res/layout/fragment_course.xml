@@ -35,7 +35,7 @@
                 android:padding="5dp"
                 android:layout_below="@id/carouselView"
                 android:layout_margin="5dp"
-                app:cardElevation="5dp"
+                app:cardElevation="0dp"
                 app:cardCornerRadius="5dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
@@ -46,16 +46,16 @@
 
                     <TextView
                         android:id="@+id/dailyYogaTitle"
-                        android:text="Trending Courses"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
+                        android:layout_toStartOf="@id/viewAllTrendingTv"
                         android:drawablePadding="10dp"
+                        android:paddingStart="5dp"
+                        android:text="Trending Courses"
                         android:textSize="20sp"
                         android:textStyle="bold"
-                        android:paddingStart="5dp"
-                        android:typeface="sans"
-                        android:layout_toStartOf="@id/viewAllTrendingTv"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
+                        android:typeface="sans" />
 
                     <TextView
                         android:id="@+id/viewAllTrendingTv"
@@ -73,11 +73,12 @@
                         android:layout_height="wrap_content"/>
 
                     <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/dailyYogRecycler"
+                        android:id="@+id/trendingCourseRecycler"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:layout_below="@id/dailyYogaTitle"
                         android:layout_marginTop="5dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
+                        android:layout_marginBottom="5dp" />
 
                 </RelativeLayout>
 
@@ -90,7 +91,7 @@
                 android:layout_marginBottom="5dp"
                 android:layout_marginStart="5dp"
                 android:layout_marginEnd="5dp"
-                app:cardElevation="5dp"
+                app:cardElevation="0dp"
                 app:cardCornerRadius="5dp"
                 android:layout_below="@id/trendingCourseCard"
                 android:layout_width="match_parent"
@@ -101,22 +102,40 @@
                     android:layout_height="wrap_content">
 
                     <TextView
-                        android:id="@+id/generalUpcharTitle"
-                        android:text="Recently added courses"
+                        android:id="@+id/recentCourseTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
+                        android:layout_toStartOf="@id/viewAllRecentTv"
+                        android:drawablePadding="10dp"
+                        android:paddingStart="5dp"
+                        android:text="Latest Courses"
                         android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:typeface="sans" />
+
+                    <TextView
+                        android:id="@+id/viewAllRecentTv"
+                        android:text="View all"
+                        android:layout_marginTop="5dp"
+                        android:drawableEnd="@drawable/ic_baseline_add_circle_outline_24"
+                        android:drawablePadding="10dp"
+                        android:textSize="16sp"
                         android:textStyle="bold"
                         android:paddingStart="5dp"
                         android:typeface="sans"
-                        android:layout_width="match_parent"
+                        android:layout_alignBottom="@id/recentCourseTitle"
+                        android:layout_alignParentEnd="true"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
 
                     <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/generalUpcharRecycler"
-                        android:layout_below="@id/generalUpcharTitle"
-                        android:layout_marginTop="5dp"
+                        android:id="@+id/recentCourseRecycler"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/recentCourseTitle"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp" />
 
                 </RelativeLayout>
 
@@ -128,7 +147,7 @@
                 android:layout_marginBottom="55dp"
                 android:layout_marginStart="5dp"
                 android:layout_marginEnd="5dp"
-                app:cardElevation="5dp"
+                app:cardElevation="0dp"
                 app:cardCornerRadius="5dp"
                 android:layout_below="@id/recentCourseCard"
                 android:layout_width="match_parent"
@@ -139,20 +158,38 @@
                     android:layout_height="wrap_content">
 
                     <TextView
-                        android:id="@+id/popularNuskeTitle"
-                        android:text="Creativity Courses"
+                        android:id="@+id/creativityCourseTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
+                        android:layout_toStartOf="@id/viewAllCreativityTv"
+                        android:drawablePadding="10dp"
+                        android:paddingStart="5dp"
+                        android:text="Creativity Courses"
                         android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:typeface="sans" />
+
+                    <TextView
+                        android:id="@+id/viewAllCreativityTv"
+                        android:text="View all"
+                        android:layout_marginTop="5dp"
+                        android:drawableEnd="@drawable/ic_baseline_add_circle_outline_24"
+                        android:drawablePadding="10dp"
+                        android:textSize="16sp"
                         android:textStyle="bold"
                         android:paddingStart="5dp"
                         android:typeface="sans"
-                        android:layout_width="match_parent"
+                        android:layout_alignBottom="@id/creativityCourseTitle"
+                        android:layout_alignParentEnd="true"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
 
                     <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/popularNuskeRecycler"
-                        android:layout_below="@id/popularNuskeTitle"
+                        android:id="@+id/creativityCourseRecycler"
+                        android:layout_below="@id/creativityCourseTitle"
                         android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"/>
 

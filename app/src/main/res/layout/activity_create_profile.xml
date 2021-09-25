@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    tools:context=".CreateProfileActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarCreateProfile"
+        app:title="Create Profile"
+        android:background="@color/purple_500"
+        app:titleTextColor="@android:color/white"
+        android:layout_alignParentTop="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <ScrollView
+        android:layout_below="@id/toolbarCreateProfile"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginTop="20dp"
+                android:layout_centerHorizontal="true"
+                app:civ_border_width="2dp"
+                app:civ_border_color="?attr/colorControlNormal"
+                android:id="@+id/profile_image"
+                android:src="@drawable/profile_icon" />
+
+
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:id="@+id/photo_selector_icon"
+                android:layout_toEndOf="@id/profile_image"
+                android:layout_alignBottom="@id/profile_image"
+                android:layout_marginStart="-40dp"
+                android:background="@drawable/circular_bg_noborder"
+                android:elevation="0dp"
+                fresco:roundingBorderPadding="5dp"
+                fresco:placeholderImage="@drawable/photo_selecter_icon"
+                app:roundAsCircle="true"
+                app:viewAspectRatio="1"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content" />
+
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:id="@+id/photo_rotate_icon"
+                android:visibility="gone"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/profile_image"
+                android:layout_marginStart="-18dp"
+                android:layout_marginBottom="45dp"
+                android:layout_toEndOf="@id/profile_image"
+                android:background="@drawable/circular_bg_noborder"
+                android:elevation="0dp"
+                app:roundAsCircle="true"
+                app:viewAspectRatio="1"
+                fresco:placeholderImage="@drawable/ic_baseline_rotate_90_degrees_ccw_24"
+                fresco:roundingBorderPadding="5dp" />
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/nameInput"
+                android:visibility="visible"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:enabled="true"
+                android:hint="Enter Name"
+                app:boxCornerRadiusBottomEnd="14dp"
+                android:padding="5dp"
+                app:endIconMode="clear_text"
+                android:layout_below="@id/profile_image"
+                app:startIconDrawable="@drawable/ic_baseline_perm_identity_24">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/name_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/ageInput"
+                android:visibility="visible"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:enabled="true"
+                android:hint="Enter age"
+                app:boxCornerRadiusBottomEnd="14dp"
+                android:padding="5dp"
+                app:endIconMode="clear_text"
+                android:layout_below="@+id/nameInput"
+                app:startIconDrawable="@drawable/age_icon">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/age_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxLength="2"
+                    android:inputType="number" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/bioInput"
+                android:visibility="visible"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:enabled="true"
+                android:hint="Enter bio"
+                app:boxCornerRadiusBottomEnd="14dp"
+                android:padding="5dp"
+                app:endIconMode="clear_text"
+                android:layout_below="@+id/ageInput"
+                app:startIconDrawable="@drawable/bio_icon">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/bio_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/genderInput"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                app:boxCornerRadiusBottomEnd="14dp"
+                android:padding="5dp"
+                android:layout_below="@+id/bioInput"
+                app:startIconDrawable="@drawable/gender_icon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Gender"
+                android:orientation="horizontal">
+
+                <AutoCompleteTextView
+                    android:id="@+id/filled_exposed_dropdown"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="none" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/hobby1Input"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                app:boxCornerRadiusBottomEnd="14dp"
+                android:padding="5dp"
+                android:layout_below="@+id/genderInput"
+                app:startIconDrawable="@drawable/hobby_icon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Hobby 1"
+                android:orientation="horizontal">
+
+                <AutoCompleteTextView
+                    android:id="@+id/hobby1_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="none" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/hobby2Input"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                app:boxCornerRadiusBottomEnd="14dp"
+                android:padding="5dp"
+                android:layout_below="@+id/hobby1Input"
+                app:startIconDrawable="@drawable/hobby_icon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Hobby 2"
+                android:orientation="horizontal">
+
+                <AutoCompleteTextView
+                    android:id="@+id/hobby2_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="none" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/hobby3Input"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                app:boxCornerRadiusBottomEnd="14dp"
+                android:padding="5dp"
+                android:layout_below="@+id/hobby2Input"
+                app:startIconDrawable="@drawable/hobby_icon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Hobby 3"
+                android:orientation="horizontal">
+
+                <AutoCompleteTextView
+                    android:id="@+id/hobby3_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="none" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/addLocationBtn"
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/hobby3Input"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="5dp"
+                android:drawableEnd="@drawable/ic_baseline_add_location_alt_24"
+                android:text="Add your location" />
+
+            <Button
+                android:id="@+id/submitBtn"
+                android:enabled="false"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/addLocationBtn"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="25dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="5dp"
+                android:text="Submit" />
+
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>
