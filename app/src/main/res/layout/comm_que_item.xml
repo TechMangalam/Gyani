@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    app:cardElevation="10dp"
+    app:cardCornerRadius="5dp"
+    android:layout_margin="2dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:padding="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/userInfoLayout"
+            android:layout_alignParentTop="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profile_image"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_centerVertical="true"
+                android:src="@drawable/profile_icon"
+                app:civ_border_width="2dp"
+                app:civ_border_color="?attr/colorControlNormal"/>
+
+            <ImageView
+                android:layout_margin="1dp"
+                android:id="@+id/moreMenuQue"
+                android:padding="5dp"
+                android:src="@drawable/more_blue_30"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/profileName"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="10dp"
+                android:text="Unknown"
+                android:textSize="16sp"
+                android:singleLine="true"
+                android:layout_toEndOf="@+id/profile_image"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/date"
+                android:layout_below="@+id/profileName"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="10dp"
+                android:text="24/07/2020"
+                android:textSize="12sp"
+                android:textStyle="italic"
+                android:singleLine="true"
+                android:layout_toEndOf="@+id/profile_image"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </RelativeLayout>
+
+        <View
+            android:background="#AB787878"
+            android:backgroundTint="?attr/colorControlNormal"
+            android:layout_marginTop="2dp"
+            android:layout_below="@id/userInfoLayout"
+            android:layout_marginStart="55dp"
+            android:layout_marginEnd="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"/>
+
+        <TextView
+            android:id="@+id/question"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/userInfoLayout"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="5dp"
+            android:autoLink="all"
+            android:hint="Enter your text here"
+            android:linksClickable="true"
+            android:maxLines="10"
+            android:minHeight="60dp"
+            android:padding="10dp"
+            android:textSize="20sp"
+            android:typeface="sans" />
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:padding="5dp"
+            android:id="@+id/queImg"
+            android:visibility="gone"
+            android:layout_marginBottom="5dp"
+            android:layout_below="@+id/question"
+            android:layout_width="match_parent"
+            android:adjustViewBounds="true"
+            app:viewAspectRatio="1.33"
+            android:layout_height="wrap_content" />
+
+        <View
+            android:layout_marginTop="2dp"
+            android:background="@android:color/black"
+            android:backgroundTint="?attr/colorControlNormal"
+            android:layout_below="@id/queImg"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"/>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_below="@+id/queImg"
+            android:layout_width="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:drawablePadding="10dp"
+                android:id="@+id/answerQue"
+                android:text="Comments"
+                android:singleLine="true"
+                android:textAlignment="gravity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:drawableStartCompat="@drawable/comment" />
+
+            <TextView
+                android:id="@+id/commentCounterTv"
+                android:textAlignment="center"
+                android:text="00"
+                android:layout_marginStart="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_below="@+id/queImg"
+            android:layout_width="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:drawablePadding="10dp"
+                android:id="@+id/upvoteTv"
+                android:text="Upvote"
+                android:singleLine="true"
+                android:textAlignment="gravity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:drawableEndCompat="@drawable/ic_baseline_trending_up_24" />
+
+            <TextView
+                android:id="@+id/upvoteCounterTv"
+                android:text="00"
+                android:layout_gravity="end"
+                android:layout_marginEnd="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+
+</androidx.cardview.widget.CardView>

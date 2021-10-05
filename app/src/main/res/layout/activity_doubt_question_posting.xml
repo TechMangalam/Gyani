@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.community.DoubtQuestionPostingActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_create_post"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimaryVariant"
+        app:title="Ask your doubts"
+        app:titleTextColor="@android:color/white" />
+
+    <ScrollView
+        android:layout_below="@id/toolbar_create_post"
+        android:scrollbars="vertical"
+        android:layout_above="@id/bottom_tools_rtl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/post_text_input_layout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:enabled="true"
+                android:hint="Type your message here..."
+                app:boxCornerRadiusBottomEnd="14dp"
+                android:padding="5dp"
+                app:endIconMode="clear_text"
+                app:boxStrokeWidth="0dp"
+                app:boxStrokeWidthFocused="0dp"
+                app:startIconDrawable="@drawable/ic_baseline_edit_24">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/post_text_text_input_field"
+                    android:layout_width="match_parent"
+                    android:scrollbars="vertical"
+                    android:textSize="18sp"
+                    android:layout_height="wrap_content" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/create_post_shapable_iv"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:layout_below="@id/post_text_input_layout"
+                android:layout_marginHorizontal="10dp"
+                android:scaleType="fitXY"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/rotateImageTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/create_post_shapable_iv"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@android:color/white"
+                android:elevation="0dp"
+                android:padding="5dp"
+                android:text="Rotate"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:visibility="gone"
+                app:drawableTopCompat="@drawable/ic_baseline_rotate_90_degrees_ccw_24" />
+
+            <ImageButton
+                android:id="@+id/removeAttachedImageBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/post_text_input_layout"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/custom_bordered_ripple"
+                android:padding="5dp"
+                android:src="@drawable/ic_baseline_delete_forever_24"
+                android:visibility="gone" />
+
+            <VideoView
+                android:id="@+id/create_post_video_view"
+                android:layout_marginHorizontal="10dp"
+                android:visibility="gone"
+                android:layout_below="@id/create_post_shapable_iv"
+                android:layout_width="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_height="wrap_content" />
+
+
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/bottom_tools_rtl"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/attachment_linear_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="0dp"
+            android:layout_centerVertical="true"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/imageAttachImageBtn"
+                android:padding="5dp"
+                android:background="@drawable/custom_bordered_ripple"
+                android:src="@drawable/ic_baseline_image_24"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <ImageButton
+                android:id="@+id/cameraAttachImageBtn"
+                android:padding="5dp"
+                android:background="@drawable/custom_bordered_ripple"
+                android:src="@drawable/ic_baseline_photo_camera_24"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+
+            <ImageButton
+                android:id="@+id/tagAttachImageBtn"
+                android:padding="5dp"
+                android:layout_gravity="end"
+                android:background="@drawable/custom_bordered_ripple"
+                android:src="@drawable/ic_baseline_tag_24"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_alignParentEnd="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageButton
+                android:id="@+id/post_question_btn"
+                android:padding="5dp"
+                android:clickable="false"
+                android:src="@drawable/ic_baseline_send_24"
+                android:background="@drawable/custom_bordered_ripple"
+                android:layout_marginHorizontal="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+
+</RelativeLayout>

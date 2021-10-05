@@ -22,6 +22,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Gyani">
         <activity
+            android:name=".ui.community.DoubtQuestionPostingActivity"
+            android:exported="true" />
+        <activity
             android:name=".CreateProfileActivity"
             android:exported="true" />
         <activity
